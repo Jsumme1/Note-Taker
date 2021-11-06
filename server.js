@@ -17,6 +17,17 @@ function findById(id, notesArray) {
   return result;
 }
 
+function createNewNote(body, notesArray) {
+  const note = body;
+  notesArray.push(note);
+    fs.writeFileSync(
+      path.join(__dirname, "./db/db.json"),
+      JSON.stringify({ notes: notesArray }, null, 2)
+    );
+return note;
+}
+
+
 app.get("/api/notes", (req, res) => {
 res.json(notes);
 });
@@ -32,33 +43,15 @@ app.get("/api/notes/:id", (req, res) => {
 
 app.post("/api/notes", (req, res) => {
   // set id based on what the next index of the array will be
-  req.body.id = notes.length.toString();
-  // if any data in req.body is incorrect, send 400 error back
-  if (!validateAnimal(req.body)) {
-    res.status(400).send("The animal is not properly formatted.");
-  } else {
-    // add animal to json file and animals array in this function
-    const animal = createNewAnimal(req.body, animals);
+  req.body.id = notes.length.toString()
+ // add note to json file and notes array in this function
+    const note = createNewNote(req.body, notes);
 
-    res.json(animal);
+    res.json(note);
   }
-});
+);
 
-function validateAnimal(animal) {
-  if (!animal.name || typeof animal.name !== "string") {
-    return false;
-  }
-  if (!animal.species || typeof animal.species !== "string") {
-    return false;
-  }
-  if (!animal.diet || typeof animal.diet !== "string") {
-    return false;
-  }
-  if (!animal.personalityTraits || !Array.isArray(animal.personalityTraits)) {
-    return false;
-  }
-  return true;
-}
+
 // app.get("/notes", (req, res) => {
 //   res.sendFile(path.join(__dirname, "./public/notes.html"));
 // });
