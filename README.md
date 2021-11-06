@@ -34,7 +34,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ## Images 
 ![Example of HTML Landing Page](https://github.com/Jsumme1/Note-Taker/blob/main/public/assets/Images/LandingPage.JPG)
-![Example of Note Taking]()
+![Example of Note Taking](https://github.com/Jsumme1/Note-Taker/blob/main/public/assets/Images/NotePage.JPG)
 
 ## Contributions
 Made by Julie
