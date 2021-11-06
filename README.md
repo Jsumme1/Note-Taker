@@ -6,7 +6,7 @@
 * [Usage](#usage)
 * [Images](#images)
 * [Contributions](#contributions)
-* [Software] (#software)
+* [Software](#software)
 * [Questions](#questions)
 
 ## Installation
@@ -33,7 +33,7 @@ WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 
 ## Images 
-![Example of HTML Landing Page]()
+![Example of HTML Landing Page](https://github.com/Jsumme1/Note-Taker/blob/main/public/assets/Images/LandingPage.JPG)
 ![Example of Note Taking]()
 
 ## Contributions
